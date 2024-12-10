@@ -1,12 +1,5 @@
 from rcs import (
-    Action,
-    Card,
-    InboundActionMessage,
-    InboundLocationMessage,
-    InboundMediaMessage,
-    InboundTextMessage,
     Pinnacle,
-    SendRcsResponse,
 )
 from fastapi import FastAPI, Request
 import os
@@ -38,6 +31,7 @@ async def root(request: Request):
     return {"status": "success"}
 
 
+# Visit localhost:8000/send to send a message
 @app.get("/send")
 async def send_message():
     response = client.send.rcs(
